@@ -1,3 +1,3 @@
 # Programação-e-Algoritmia
 
-Cadeira do segundo semestre do curso de matematica
+Cadeira do segundo semestre do curso de Matematica
