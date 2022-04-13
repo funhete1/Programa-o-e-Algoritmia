@@ -1,5 +1,5 @@
 from Queue import Queue
-
+from time import sleep
  
 def test():
     my_instance = Queue()
@@ -37,6 +37,12 @@ def test():
         elif my_op == 'size':
             print(f"Queue size = {my_instance.size()}")
 
+        elif my_op == 'quit':
+            print("Quiting")
+            for i in range(3): 
+                sleep(1) 
+                print('.', end= '')
+            break
         print(my_instance)
 
 if __name__ == "__main__":

@@ -1,3 +1,4 @@
+from time import sleep
 from Stack import Stack
 
 my_instance = Stack()
@@ -33,4 +34,10 @@ while True:
         my_instance.clear()
         print("Stack reseted")
 
+    elif my_op == 'quit':
+        print("Quiting")
+        for i in range(3): 
+            sleep(1) 
+            print('.', end= '')
+        break
     print(my_instance)
