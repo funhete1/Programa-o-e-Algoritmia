@@ -34,6 +34,13 @@ class Comboio():
 				self.vagoes[index].add_cargo(i)
 				print(f"Carregando {i.get_designacao()},{i.get_dono()},{i.get_peso()}" +
 					f" no vagao Vagão de Mercadorias n.{index+1},Carga máx={self.vagoes[index].get_peso()}")
+
+			#every time somthing cameout the stock we need to update the stock
+
+			for i in self.vagoes:
+				for j in i.get_conteudo():
+					armazem.get_fila().remove(j)
+
 	
 	def fazer_viagem(self):
 		print("LOCOMOTIVA\n\rPartida........ viagem .....Chegada.")
@@ -41,7 +48,7 @@ class Comboio():
 	def descarregar(self):
 		for i in self.vagoes[::-1]:
 			print(f"Início da descarga de Vagão{self.vagoes.index(i)+1}[carga={i.total_weight()}, carga max = {i.get_peso()}\n")
-			for j in i.get_conteudo():
+			for j in i.get_conteudo()[::-1]:
 				print(f"{j.designacao},{j.dono},{j.peso}")
 
 
