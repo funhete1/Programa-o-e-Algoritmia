@@ -1,5 +1,5 @@
 from armazem import Armazem
-from mercadorias import Mercadoria
+from mercadoria import Mercadoria
 from comboio import Comboio
 
 def main():
@@ -13,6 +13,7 @@ def main():
     armazem_origem.receber(Mercadoria("Parafusos",4000,"CP CARGO"))
     armazem_origem.receber(Mercadoria("Cereais",4000,"CP CARGO"))
     armazem_origem.receber(Mercadoria("Motos",5000,"APRILIA"))
+    
 
     # criar comboio com 3 vagões, todos com carga máxima de 10 toneladas
     comboio = Comboio([10, 10, 10])
@@ -20,7 +21,8 @@ def main():
     # carregar comboio com o que está em armazém
     comboio.carregar(armazem_origem)
     print(comboio)
-
+    
+    
     # fazer viagem e descarregar no destino
     comboio.fazer_viagem()
     comboio.descarregar()  # descarrega e mostra
